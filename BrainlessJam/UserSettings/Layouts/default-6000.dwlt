@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1349
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 5}
   m_MinSize: {x: 875, y: 332}
   m_MaxSize: {x: 10000, y: 10000}
@@ -1364,7 +1364,7 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -1294
+      - m_Data: -1356
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1490,7 +1490,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials
+    - Assets/Assets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1500,7 +1500,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Materials
+  - Assets/Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Github\BrainlessJam_-GameName-\BrainlessJam
   m_LockTracker:
@@ -1509,12 +1509,13 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 45888
+    - m_Data: 45992
     m_LastClickedID:
-      m_Data: 45888
+      m_Data: 45992
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 45598
+    - m_Data: 45638
+    - m_Data: 45992
     - m_Data: 1000000000
     - m_Data: 2147483647
     m_RenameOverlay:
@@ -1549,7 +1550,7 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 45598
+    - m_Data: 45638
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2307,9 +2308,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -0.27438366, y: -2.4555416, z: 9.314353}
+    m_Target: {x: -0.21410725, y: -2.1499336, z: 4.6885805}
     speed: 2
-    m_Value: {x: -0.27438366, y: -2.4555416, z: 9.314353}
+    m_Value: {x: -0.21410725, y: -2.1499336, z: 4.6885805}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2355,13 +2356,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.09616147, y: 0.0010923337, z: -0.000105144965, w: -0.99536777}
+    m_Target: {x: 0.17339088, y: -0.02086767, z: 0.0036754939, w: 0.984632}
     speed: 2
-    m_Value: {x: -0.097654164, y: 0.0010921719, z: -0.00010678309, w: -0.99521977}
+    m_Value: {x: 0.173384, y: -0.022344442, z: 0.0039355494, w: 0.9845929}
   m_Size:
-    m_Target: 8.585421
+    m_Target: 5.9245725
     speed: 2
-    m_Value: 8.2157135
+    m_Value: 5.6694474
   m_Ortho:
     m_Target: 0
     speed: 2
