@@ -1,0 +1,1 @@
+Please Add SCriptable Objects of type Ingredient for each item (unintuitive name i know)
