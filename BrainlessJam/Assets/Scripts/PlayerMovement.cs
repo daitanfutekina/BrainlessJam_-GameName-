@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Values")]
@@ -14,55 +13,67 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] ParticleSystem walkParticles;
 
     Animator animator;
-
+    Rigidbody rb;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
+
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
+        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         ProcessMovement();
     }
 
     void ProcessMovement()
     {
-        float horizontal = Input.GetAxis("Horizontal"); 
+        float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        float moveSpeed = moveSpeedBase; 
+        float moveSpeed = moveSpeedBase;
 
-        
+        // Animations
         if (animator != null)
         {
-            animator.SetBool("IsWalking", (vertical > 0.3 || vertical < -0.3 || 
-            horizontal > 0.3 || horizontal < -0.3) && !Keyboard.current.shiftKey.isPressed);
+            bool isWalking = (Mathf.Abs(horizontal) > 0.3f || Mathf.Abs(vertical) > 0.3f) && !Keyboard.current.shiftKey.isPressed;
+            animator.SetBool("IsWalking", isWalking);
         }
+
+        // Running speed
         if (Keyboard.current.shiftKey.isPressed)
         {
             moveSpeed += runBoost;
         }
-        else
-        {
-            moveSpeed = moveSpeedBase;
-        }
         animator.SetBool("IsRunning", Keyboard.current.shiftKey.isPressed);
-        
-        transform.Translate(0f, 0f, vertical * moveSpeed * Time.deltaTime);
-        if (vertical > 0.3 || vertical < -0.3 || horizontal > 0.3 || horizontal < -0.3)
+
+        // ----- PLAYER-RELATIVE INPUT -----
+        Vector3 inputDir = new Vector3(horizontal, 0f, vertical);
+        if (inputDir.sqrMagnitude > 1f)
+            inputDir.Normalize();
+
+        // Convert inputDir from local (player) space to world space
+        Vector3 relativeDir = transform.TransformDirection(inputDir);
+
+        // Apply velocity
+        Vector3 velocity = relativeDir * moveSpeed;
+        velocity.y = rb.linearVelocity.y; // preserve gravity
+        rb.linearVelocity = velocity;
+
+        // ----- PARTICLES -----
+        if (Mathf.Abs(horizontal) > 0.3f || Mathf.Abs(vertical) > 0.3f)
         {
-            if (!walkParticles.isPlaying)
-            {
-                walkParticles.Play();
-            }
+            if (!walkParticles.isPlaying) walkParticles.Play();
         }
         else
         {
             walkParticles.Stop();
         }
 
-        
-        transform.Rotate(0f, horizontal * rotateSpeed * Time.deltaTime, 0f);
+        // ----- ROTATION (unchanged) -----
+        transform.Rotate(0f, horizontal * rotateSpeed * Time.fixedDeltaTime, 0f);
     }
-
 }
