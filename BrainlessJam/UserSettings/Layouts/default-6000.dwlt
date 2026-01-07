@@ -331,7 +331,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scripts/SpearHunting
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 71
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scripts/SpearHunting
   m_LastFoldersGridSize: 71
   m_LastProjectPath: D:\Github\BrainlessJam_-GameName-\BrainlessJam
   m_LockTracker:
@@ -350,15 +350,15 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
     m_SelectedIDs:
-    - m_Data: 64920
+    - m_Data: 65612
     m_LastClickedID:
-      m_Data: 64920
+      m_Data: 65612
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 64916
-    - m_Data: 64918
-    - m_Data: 64920
-    - m_Data: 64922
+    - m_Data: 64838
+    - m_Data: 64840
+    - m_Data: 64842
+    - m_Data: 64844
     - m_Data: 1000000000
     - m_Data: 2147483647
     m_RenameOverlay:
@@ -393,10 +393,10 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 64916
-    - m_Data: 64918
-    - m_Data: 64920
-    - m_Data: 64922
+    - m_Data: 64838
+    - m_Data: 64840
+    - m_Data: 64842
+    - m_Data: 64844
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: []
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -917,13 +917,13 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -9452
-      - m_Data: -9444
-      - m_Data: -9272
-      - m_Data: -5610
-      - m_Data: -1478
-      - m_Data: 66390
-      - m_Data: 66406
+      - m_Data: -21454
+      - m_Data: -6824
+      - m_Data: -6498
+      - m_Data: -6220
+      - m_Data: -4824
+      - m_Data: -4528
+      - m_Data: -1390
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1698,9 +1698,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -53.766586, y: 14.732117, z: 43.199223}
+    m_Target: {x: -228.88089, y: -43.534805, z: -423.64587}
     speed: 2
-    m_Value: {x: -53.766586, y: 14.732117, z: 43.199223}
+    m_Value: {x: -228.88089, y: -43.534805, z: -423.64587}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1746,20 +1746,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.31173432, y: 0.046136897, z: -0.015186825, w: -0.9489542}
+    m_Target: {x: -0.24436148, y: -0.4791603, z: 0.1408149, w: -0.83123016}
     speed: 2
-    m_Value: {x: -0.3117263, y: 0.04613571, z: -0.015186434, w: -0.9489298}
+    m_Value: {x: -0.24435177, y: -0.4791413, z: 0.14080931, w: -0.83119714}
   m_Size:
-    m_Target: 40.427315
+    m_Target: 86.16258
     speed: 2
-    m_Value: 40.427315
+    m_Value: 86.16258
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 0.8855999
-    m_SpeedNormalized: 0.43999997
+    m_Speed: 0.4079999
+    m_SpeedNormalized: 0.19999996
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
