@@ -1,0 +1,20 @@
+{
+    "asset": "967957a818b31d84685db50b842fb3ea",
+    "fileName": "019b96a1-d4e3-7a24-bdbf-069d8f5370ca.png",
+    "prompt": "placeholder hole for whacka a mole ",
+    "negativePrompt": "",
+    "model": "5b5b2af1-6ea4-4266-b087-cc9f3bf4f450",
+    "modelName": "Flux.1 Dev",
+    "customSeed": -1,
+    "w3CTraceId": "956185aca2dad68473292444a154a347",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}
