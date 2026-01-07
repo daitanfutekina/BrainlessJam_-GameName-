@@ -7,7 +7,6 @@ public class Ingredient : ScriptableObject
     public Sprite icon;
     public string relevantTool;
     public Collider relevantZone;
-    public Mesh relevantModel;
-    public Material relevantMaterial;
+    public GameObject modelPrefab;
     public bool isTool;
 }

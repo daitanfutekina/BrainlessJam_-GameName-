@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77fd405d4a1251d4c9dc53423bf838cd, type: 3}
-  m_Name: Blueberry
+  m_Name: Fish
   m_EditorClassIdentifier: Assembly-CSharp::Ingredient
-  ingredientName: Blueberry
-  icon: {fileID: 21300000, guid: 035b9df37927f68449dcb3ff99e40d77, type: 3}
-  relevantTool: Hands
+  ingredientName: Fish
+  icon: {fileID: 21300000, guid: 09edbaafb1d81384d87c8dc9982727e8, type: 3}
+  relevantTool: FishingRod
   relevantZone: {fileID: 0}
-  modelPrefab: {fileID: 919132149155446097, guid: 0aa3c5173a3ddf34b926a553e450c93e, type: 3}
+  modelPrefab: {fileID: 919132149155446097, guid: 3991a41d062d3c84eae8ce877a1bdbbd, type: 3}
   isTool: 0

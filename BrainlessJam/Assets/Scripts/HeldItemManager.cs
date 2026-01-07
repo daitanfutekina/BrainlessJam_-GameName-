@@ -3,33 +3,47 @@ using UnityEngine;
 public class HeldItemManager : MonoBehaviour
 {
     [SerializeField] InventoryManager inventoryManager;
-    [SerializeField] GameObject modelHolder;
+    [SerializeField] Transform modelHolder;
 
-    MeshFilter mesh;
-    MeshRenderer meshRenderer;
+    Ingredient currentIngredient;
+    Ingredient previousIngredient;
 
-    Ingredient selectedIngredient;
+    GameObject currentHeldObject;
 
-    void Start()
-    {
-        mesh = modelHolder.GetComponent<MeshFilter>();
-        meshRenderer = modelHolder.GetComponent<MeshRenderer>();
-    }
-    
-    
     void Update()
     {
-        if (inventoryManager.GetSelectedIngredient() != null) {selectedIngredient = inventoryManager.GetSelectedIngredient();} else {selectedIngredient = null;}
-        
-        if (selectedIngredient == null)
+        currentIngredient = inventoryManager.GetSelectedIngredient();
+
+        // If the selected ingredient hasn't changed, do nothing
+        if (currentIngredient == previousIngredient)
+            return;
+
+        // Ingredient changed → update held item
+        UpdateHeldItem();
+
+        previousIngredient = currentIngredient;
+    }
+
+    void UpdateHeldItem()
+    {
+        // Destroy old object if it exists
+        if (currentHeldObject != null)
         {
-            mesh.mesh = null;
-            meshRenderer.material = null;
+            Destroy(currentHeldObject);
+            currentHeldObject = null;
         }
-        else
-        {
-            mesh.mesh = selectedIngredient.relevantModel;
-        }
-        meshRenderer.material = selectedIngredient.relevantMaterial;
+
+        // If nothing selected, we're done
+        if (currentIngredient == null)
+            return;
+
+        // Spawn new object
+        currentHeldObject = Instantiate(
+            currentIngredient.modelPrefab,
+            modelHolder
+        );
+
+        currentHeldObject.transform.localPosition = Vector3.zero;
+        currentHeldObject.transform.localRotation = Quaternion.identity;
     }
 }

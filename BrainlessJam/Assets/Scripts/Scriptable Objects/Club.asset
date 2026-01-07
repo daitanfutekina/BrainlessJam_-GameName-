@@ -16,6 +16,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 3512dd4f740e8924993e348717844552, type: 3}
   relevantTool: 
   relevantZone: {fileID: 0}
-  relevantModel: {fileID: 2534964839176971238, guid: 75017d1c3e943d2409167e6b0d4127f9, type: 3}
-  relevantMaterial: {fileID: -6478536213147159724, guid: 75017d1c3e943d2409167e6b0d4127f9, type: 3}
+  modelPrefab: {fileID: 919132149155446097, guid: 75017d1c3e943d2409167e6b0d4127f9, type: 3}
   isTool: 1
