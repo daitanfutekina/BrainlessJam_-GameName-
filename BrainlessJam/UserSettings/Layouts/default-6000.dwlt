@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1349
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -73,9 +73,9 @@ MonoBehaviour:
   m_MaxSize: {x: 10000, y: 10026}
   m_ActualView: {fileID: 12}
   m_Panes:
-  - {fileID: 15}
   - {fileID: 12}
-  m_Selected: 1
+  - {fileID: 15}
+  m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 112}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 51
+  controlID: 82
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 56}
   m_MaxSize: {x: 32384, y: 8096}
   vertical: 0
-  controlID: 52
+  controlID: 77
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -331,7 +331,6 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Assets/Jam/FBX
     - Assets/Scripts/Scriptable Objects
     m_Globs: []
     m_ProductIds: 
@@ -342,7 +341,6 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 71
   m_LastFolders:
-  - Assets/Assets/Jam/FBX
   - Assets/Scripts/Scriptable Objects
   m_LastFoldersGridSize: 71
   m_LastProjectPath: D:\Github\BrainlessJam_-GameName-\BrainlessJam
@@ -350,18 +348,17 @@ MonoBehaviour:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 60}
+    scrollPos: {x: 0, y: 120}
     m_SelectedIDs:
-    - m_Data: 60548
-    - m_Data: 65250
+    - m_Data: 65490
     m_LastClickedID:
-      m_Data: 65250
+      m_Data: 65490
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 64890
-    - m_Data: 64892
-    - m_Data: 64894
-    - m_Data: 65234
+    - m_Data: 65050
+    - m_Data: 65052
+    - m_Data: 65054
+    - m_Data: 65056
     - m_Data: 1000000000
     - m_Data: 2147483647
     m_RenameOverlay:
@@ -394,7 +391,12 @@ MonoBehaviour:
     m_SelectedIDs: []
     m_LastClickedID:
       m_Data: 0
-    m_ExpandedIDs: []
+    m_ExpandedIDs:
+    - m_Data: 0
+    - m_Data: 65050
+    - m_Data: 65052
+    - m_Data: 65054
+    - m_Data: 65056
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -915,24 +917,10 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -1874
-      - m_Data: -1870
-      - m_Data: -1866
-      - m_Data: -1862
-      - m_Data: -1814
-      - m_Data: -1810
-      - m_Data: -1806
-      - m_Data: -1730
-      - m_Data: -1704
-      - m_Data: -1686
-      - m_Data: -1668
-      - m_Data: -1650
-      - m_Data: -1632
-      - m_Data: -1624
-      - m_Data: -1622
-      - m_Data: 64350
-      - m_Data: 64366
-      - m_Data: 64382
+      - m_Data: -4274
+      - m_Data: -1958
+      - m_Data: -1786
+      - m_Data: 64620
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1707,9 +1695,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -0.9548272, y: 4.7046404, z: -5.491331}
+    m_Target: {x: -0.7430978, y: 4.6124105, z: -1.7216678}
     speed: 2
-    m_Value: {x: -0.9548272, y: 4.7046404, z: -5.491331}
+    m_Value: {x: -54.417446, y: 47.382168, z: -83.15203}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1755,13 +1743,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.26389235, y: 0.07570378, z: -0.02080676, w: -0.9613754}
+    m_Target: {x: -0.21317151, y: -0.46542764, z: 0.11654138, w: -0.8511169}
     speed: 2
-    m_Value: {x: -0.2639172, y: 0.07425993, z: -0.02041043, w: -0.9614659}
+    m_Value: {x: -0.21316653, y: -0.46541676, z: 0.11653866, w: -0.851097}
   m_Size:
-    m_Target: 216.93858
+    m_Target: 13.179223
     speed: 2
-    m_Value: 207.59673
+    m_Value: 13.800234
   m_Ortho:
     m_Target: 0
     speed: 2
