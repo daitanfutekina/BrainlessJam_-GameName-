@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 42.666668
+    y: 0
     width: 1706.6666
     height: 36
   m_SerializedDataModeController:
@@ -720,7 +720,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 78.66667
+    y: 24
     width: 270.33334
     height: 604
   m_SerializedDataModeController:
@@ -791,8 +791,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1415.3334
-    y: 78.66667
+    x: 1416.3334
+    y: 24
     width: 290.33325
     height: 604
   m_SerializedDataModeController:
@@ -843,7 +843,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 708.6667
+    y: 654
     width: 1706.6666
     height: 264
   m_SerializedDataModeController:
@@ -894,32 +894,30 @@ MonoBehaviour:
       m_Data: 49654
     m_ExpandedIDs:
     - m_Data: 0
+    - m_Data: 49286
+    - m_Data: 49288
+    - m_Data: 49290
+    - m_Data: 49292
+    - m_Data: 49294
+    - m_Data: 49296
+    - m_Data: 49298
+    - m_Data: 49300
+    - m_Data: 49302
+    - m_Data: 49304
+    - m_Data: 49306
+    - m_Data: 49308
+    - m_Data: 49310
+    - m_Data: 49312
+    - m_Data: 49314
     - m_Data: 49316
     - m_Data: 49318
     - m_Data: 49320
     - m_Data: 49322
     - m_Data: 49324
-    - m_Data: 49326
-    - m_Data: 49328
-    - m_Data: 49330
-    - m_Data: 49332
-    - m_Data: 49334
-    - m_Data: 49336
-    - m_Data: 49338
-    - m_Data: 49340
-    - m_Data: 49342
-    - m_Data: 49344
-    - m_Data: 49346
-    - m_Data: 49348
-    - m_Data: 49350
-    - m_Data: 49352
-    - m_Data: 49354
-    - m_Data: 49652
-    - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Scenes
-      m_OriginalName: Scenes
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
@@ -927,10 +925,10 @@ MonoBehaviour:
         width: 0
         height: 0
       m_UserData:
-        m_Data: 49654
+        m_Data: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 3}
@@ -948,26 +946,26 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
+    - m_Data: 49286
+    - m_Data: 49288
+    - m_Data: 49290
+    - m_Data: 49292
+    - m_Data: 49294
+    - m_Data: 49296
+    - m_Data: 49298
+    - m_Data: 49300
+    - m_Data: 49302
+    - m_Data: 49304
+    - m_Data: 49306
+    - m_Data: 49308
+    - m_Data: 49310
+    - m_Data: 49312
+    - m_Data: 49314
     - m_Data: 49316
     - m_Data: 49318
     - m_Data: 49320
     - m_Data: 49322
     - m_Data: 49324
-    - m_Data: 49326
-    - m_Data: 49328
-    - m_Data: 49330
-    - m_Data: 49332
-    - m_Data: 49334
-    - m_Data: 49336
-    - m_Data: 49338
-    - m_Data: 49340
-    - m_Data: 49342
-    - m_Data: 49344
-    - m_Data: 49346
-    - m_Data: 49348
-    - m_Data: 49350
-    - m_Data: 49352
-    - m_Data: 49354
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1054,8 +1052,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Game\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 628
-    y: 78.66667
+    x: 629
+    y: 24
     width: 785.3334
     height: 604
   m_SerializedDataModeController:
@@ -1157,8 +1155,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 271.33334
-    y: 78.66667
+    x: 272.33334
+    y: 24
     width: 354.66666
     height: 604
   m_SerializedDataModeController:
@@ -1733,7 +1731,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 42.42707, y: 4.32374, z: -39.5195}
     speed: 2
-    m_Value: {x: 42.42707, y: 4.3237376, z: -39.519497}
+    m_Value: {x: 42.42707, y: 4.32374, z: -39.5195}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1781,11 +1779,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.19023363, y: -0.0009820539, z: 0.00018808151, w: 0.98175126}
     speed: 2
-    m_Value: {x: 0.19121286, y: -0.0009818529, z: 0.00018906112, w: 0.98154813}
+    m_Value: {x: -0.19023363, y: 0.0009820539, z: -0.00018808153, w: -0.9817513}
   m_Size:
     m_Target: 2.3834462
     speed: 2
-    m_Value: 2.2808099
+    m_Value: 2.3834462
   m_Ortho:
     m_Target: 0
     speed: 2
