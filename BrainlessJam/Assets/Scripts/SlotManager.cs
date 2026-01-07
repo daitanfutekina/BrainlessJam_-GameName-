@@ -13,7 +13,14 @@ public class SlotManager : MonoBehaviour
 
     public Ingredient GetIngredient()
     {
-        return ingredient;
+        if (ingredient != null)
+        {
+            return ingredient;
+        }
+        else
+        {
+            return null;
+        }
     }
 
     public void SetIngredient(Ingredient newIngredient)

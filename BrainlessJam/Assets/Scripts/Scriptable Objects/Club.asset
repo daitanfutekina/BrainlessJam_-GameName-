@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77fd405d4a1251d4c9dc53423bf838cd, type: 3}
-  m_Name: Blueberry
+  m_Name: Club
   m_EditorClassIdentifier: Assembly-CSharp::Ingredient
-  ingredientName: Blueberry
-  icon: {fileID: 21300000, guid: 035b9df37927f68449dcb3ff99e40d77, type: 3}
-  relevantTool: Hands
+  ingredientName: Club
+  icon: {fileID: 21300000, guid: 3512dd4f740e8924993e348717844552, type: 3}
+  relevantTool: 
   relevantZone: {fileID: 0}
-  relevantModel: {fileID: 4711208715938537054, guid: 0aa3c5173a3ddf34b926a553e450c93e, type: 3}
-  relevantMaterial: {fileID: -6478536213147159724, guid: 0aa3c5173a3ddf34b926a553e450c93e, type: 3}
-  isTool: 0
+  relevantModel: {fileID: 2534964839176971238, guid: 75017d1c3e943d2409167e6b0d4127f9, type: 3}
+  relevantMaterial: {fileID: -6478536213147159724, guid: 75017d1c3e943d2409167e6b0d4127f9, type: 3}
+  isTool: 1
