@@ -61,7 +61,7 @@ public class InventoryManager : MonoBehaviour
     {
         SlotManager slot = GetSelectedSlot();
         if (slot == null) return null;
-
+        
         return slot.GetIngredient();
     }
 
