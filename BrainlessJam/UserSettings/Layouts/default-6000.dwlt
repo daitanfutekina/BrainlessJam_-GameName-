@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 0
     width: 606
     height: 884
-  m_MinSize: {x: 202, y: 226}
-  m_MaxSize: {x: 4002, y: 4026}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 112}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 51
+  controlID: 48
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -122,8 +122,8 @@ MonoBehaviour:
     y: 0
     width: 405
     height: 884
-  m_MinSize: {x: 201, y: 226}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 56}
   m_MaxSize: {x: 32384, y: 8096}
   vertical: 0
-  controlID: 52
+  controlID: 49
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -247,8 +247,8 @@ MonoBehaviour:
     y: 0
     width: 419
     height: 884
-  m_MinSize: {x: 276, y: 76}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -274,8 +274,8 @@ MonoBehaviour:
     y: 0
     width: 1130
     height: 884
-  m_MinSize: {x: 202, y: 226}
-  m_MaxSize: {x: 4002, y: 4026}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -331,7 +331,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/SpearHunting
+    - Assets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 71
   m_LastFolders:
-  - Assets/Scripts/SpearHunting
+  - Assets
   m_LastFoldersGridSize: 71
   m_LastProjectPath: D:\Github\BrainlessJam_-GameName-\BrainlessJam
   m_LockTracker:
@@ -350,15 +350,15 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
     m_SelectedIDs:
-    - m_Data: 65612
+    - m_Data: 64346
     m_LastClickedID:
-      m_Data: 65612
+      m_Data: 64346
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 64838
-    - m_Data: 64840
-    - m_Data: 64842
-    - m_Data: 64844
+    - m_Data: 64346
+    - m_Data: 64348
+    - m_Data: 64350
+    - m_Data: 64352
     - m_Data: 1000000000
     - m_Data: 2147483647
     m_RenameOverlay:
@@ -393,10 +393,10 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 64838
-    - m_Data: 64840
-    - m_Data: 64842
-    - m_Data: 64844
+    - m_Data: 64346
+    - m_Data: 64348
+    - m_Data: 64350
+    - m_Data: 64352
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -917,13 +917,10 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -21454
-      - m_Data: -6824
-      - m_Data: -6498
-      - m_Data: -6220
-      - m_Data: -4824
-      - m_Data: -4528
-      - m_Data: -1390
+      - m_Data: -5696
+      - m_Data: -3452
+      - m_Data: -1422
+      - m_Data: 65862
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1698,9 +1695,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -228.88089, y: -43.534805, z: -423.64587}
+    m_Target: {x: -406.51434, y: 40.770428, z: -281.83167}
     speed: 2
-    m_Value: {x: -228.88089, y: -43.534805, z: -423.64587}
+    m_Value: {x: -406.51434, y: 40.770428, z: -281.83167}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1746,13 +1743,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.24436148, y: -0.4791603, z: 0.1408149, w: -0.83123016}
+    m_Target: {x: 0.0051015145, y: 0.020089544, z: 0.00006295193, w: -0.99982834}
     speed: 2
-    m_Value: {x: -0.24435177, y: -0.4791413, z: 0.14080931, w: -0.83119714}
+    m_Value: {x: 0.0051012943, y: 0.020088678, z: 0.00006294921, w: -0.9997852}
   m_Size:
-    m_Target: 86.16258
+    m_Target: 1121.9529
     speed: 2
-    m_Value: 86.16258
+    m_Value: 1121.9529
   m_Ortho:
     m_Target: 0
     speed: 2
