@@ -20,7 +20,7 @@ public class PickupObject : MonoBehaviour
     {
         if (Input.GetButtonDown(pickupHotkeyName))
         {
-            AddToInventory(ingredientToSet);
+            AddToNextFreeSlot(ingredientToSet);
             if (respawnObject)
             {
                 Invoke("ReEnable", respawnTime);
@@ -39,7 +39,7 @@ public class PickupObject : MonoBehaviour
     {
          Debug.Log(inventoryManager.GetSelectedIngredient());
     }
-    void AddToInventory(Ingredient objectToAdd)
+    public void AddToNextFreeSlot(Ingredient objectToAdd)
     {
         if (inventoryManager.GetSelectedIngredient() != null)
         {
@@ -51,7 +51,7 @@ public class PickupObject : MonoBehaviour
         {
             inventoryManager.selectorPos++;
             inventoryManager.MoveSelector();
-            AddToInventory(objectToAdd);
+            AddToNextFreeSlot(objectToAdd);
         }
         
     }
