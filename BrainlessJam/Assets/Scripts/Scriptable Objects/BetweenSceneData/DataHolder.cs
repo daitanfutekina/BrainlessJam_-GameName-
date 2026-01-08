@@ -1,14 +1,12 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "DataHolder", menuName = "Inventory/Data Holder")]
+[CreateAssetMenu(fileName = "DataHolder", menuName = "Inventory/DataHolder")]
 public class DataHolder : ScriptableObject
 {
-    [Header("Inventory Data")]
     public Ingredient[] ingredients;
+    public int selectorPos = 0;
 
-    [Header("Selection")]
-    public int selectorPos;
-
+    // Initialize array only if null or wrong length
     public void InitializeIfNeeded(int slotCount)
     {
         if (ingredients == null || ingredients.Length != slotCount)

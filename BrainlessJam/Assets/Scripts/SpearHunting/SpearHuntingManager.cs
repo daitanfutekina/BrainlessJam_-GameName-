@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpearHuntingManager : MonoBehaviour
 {
     [SerializeField] GameObject spear;
     [SerializeField] GameObject[] targets;
     [SerializeField] SpearHuntingConfig config;
+    [SerializeField] string loseScene;
 
     [Header("Rotation Settings")]
     public GameObject objectToRotate;
@@ -23,10 +25,16 @@ public class SpearHuntingManager : MonoBehaviour
     private int steps = 0;
     private Rigidbody spearRb;
 
+    private int usedAttempts;
+
+    void Awake()
+    {
+        usedAttempts = config.attempts;
+    }
+    
     void Start()
     {
         startTime = Time.time;
-
         // Store the fixed rotation as a quaternion
         baseRotation = Quaternion.Euler(fixedEulerRotation);
         spearRb = spear.GetComponent<Rigidbody>();
@@ -43,6 +51,16 @@ public class SpearHuntingManager : MonoBehaviour
             if (steps == 2)
             {
                 spearRb.AddRelativeForce(0f, 0f, config.launchForce * 1000);
+                usedAttempts--;
+                if (usedAttempts > 0)
+                {
+                    Invoke("ReloadScene", 2f);
+                }
+                else
+                {
+                    SceneManager.LoadScene(loseScene);
+                }
+                
             }
         }
     }
@@ -59,5 +77,11 @@ public class SpearHuntingManager : MonoBehaviour
             // Combine fixed rotation + oscillation
             objectToRotate.transform.localRotation = baseRotation * oscillation;
         }
+    }
+
+    void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
     }
 }

@@ -16,7 +16,7 @@ public class SlotManager : MonoBehaviour
         dataHolder = holder;
         slotIndex = index;
 
-        // Apply preset ONLY if DataHolder slot is empty
+        // Only apply preset if DataHolder slot is empty
         if (dataHolder.ingredients[slotIndex] == null && presetIngredient != null)
         {
             dataHolder.ingredients[slotIndex] = presetIngredient;
@@ -38,8 +38,7 @@ public class SlotManager : MonoBehaviour
 
     void UpdateSlot()
     {
-        if (image == null || dataHolder == null)
-            return;
+        if (image == null || dataHolder == null) return;
 
         Ingredient ingredient = dataHolder.ingredients[slotIndex];
 
@@ -58,9 +57,7 @@ public class SlotManager : MonoBehaviour
 #if UNITY_EDITOR
     void OnValidate()
     {
-        if (image == null)
-            return;
-
+        if (image == null) return;
         image.sprite = presetIngredient != null ? presetIngredient.icon : null;
         image.enabled = presetIngredient != null;
     }

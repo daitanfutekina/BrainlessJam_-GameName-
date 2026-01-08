@@ -239,7 +239,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -469, y: 201, z: -172}
-  m_LocalScale: {x: 56.945, y: 56.945, z: 757.0838}
+  m_LocalScale: {x: 40, y: 40, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 924133928}
@@ -339,8 +339,9 @@ MonoBehaviour:
   targetManager: {fileID: 924133929}
   minigameManager: {fileID: 834458259}
   winSceneBuildIndex: 1
-  minSpeed: 0
-  maxSpeed: 0
+  startPoint: 350
+  endPoint: -350
+  speed: 0.5
 --- !u!1 &582193898
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +371,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -798, y: -151, z: -172}
-  m_LocalScale: {x: 56.945, y: 56.945, z: 757.0838}
+  m_LocalScale: {x: 40, y: 40, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 924133928}
@@ -470,8 +471,9 @@ MonoBehaviour:
   targetManager: {fileID: 924133929}
   minigameManager: {fileID: 834458259}
   winSceneBuildIndex: 1
-  minSpeed: 0
-  maxSpeed: 0
+  startPoint: 350
+  endPoint: -350
+  speed: 2
 --- !u!1 &834458258
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,6 +506,7 @@ MonoBehaviour:
   spear: {fileID: 3685407887513630723}
   targets: []
   config: {fileID: 11400000, guid: 426b9c0f7bae6d94985126cf811199ed, type: 2}
+  loseScene: SampleScene
   objectToRotate: {fileID: 3685407887513630723}
   rotationAxis: {x: 0, y: 1, z: 0}
   minAngle: -45
@@ -933,7 +936,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -149, y: -51, z: -172}
-  m_LocalScale: {x: 56.945, y: 56.945, z: 757.0838}
+  m_LocalScale: {x: 40, y: 40, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 924133928}
@@ -1033,8 +1036,9 @@ MonoBehaviour:
   targetManager: {fileID: 924133929}
   minigameManager: {fileID: 834458259}
   winSceneBuildIndex: 1
-  minSpeed: 0
-  maxSpeed: 0
+  startPoint: 350
+  endPoint: -350
+  speed: 1
 --- !u!33 &1135252126441893148
 MeshFilter:
   m_ObjectHideFlags: 0

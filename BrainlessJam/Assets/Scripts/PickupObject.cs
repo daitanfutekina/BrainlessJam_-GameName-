@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PickupObject : MonoBehaviour
 {
@@ -7,7 +6,7 @@ public class PickupObject : MonoBehaviour
     [SerializeField] private InventoryManager inventoryManager;
     [SerializeField] private Ingredient ingredientToSet;
 
-    [Header("Input (Input Actions Name)")]
+    [Header("Input")]
     [SerializeField] private string pickupHotkeyName = "Pickup";
 
     [Header("Scene")]
@@ -15,28 +14,36 @@ public class PickupObject : MonoBehaviour
     [SerializeField] private bool respawnObject = false;
     [SerializeField] private float respawnTime = 10f;
 
+    private Ingredient selectedItem;
+    
     private bool playerInRange;
 
-    void OnCollisionEnter(Collision other)
+    private void Start()
+    {
+        selectedItem = inventoryManager.GetSelectedIngredient();
+    }
+    
+    
+    private void OnCollisionEnter(Collision other)
     {
         if (other.collider.CompareTag("Player"))
             playerInRange = true;
     }
 
-    void OnCollisionExit(Collision other)
+    private void OnCollisionExit(Collision other)
     {
         if (other.collider.CompareTag("Player"))
             playerInRange = false;
     }
 
-    void Update()
+    private void Update()
     {
-        if (!playerInRange || inventoryManager == null)
-            return;
+        if (!playerInRange || inventoryManager == null) return;
 
         if (Input.GetButtonDown(pickupHotkeyName))
         {
-            bool added = inventoryManager.TryAddToFirstEmptySlot(ingredientToSet);
+            bool added = (inventoryManager.TryAddToFirstEmptySlot(ingredientToSet) && ingredientToSet.relevantTool == selectedItem.ingredientName);
+            
 
             if (added)
             {
@@ -47,12 +54,12 @@ public class PickupObject : MonoBehaviour
             }
             else
             {
-                Debug.Log("Inventory is full!");
+                Debug.Log("Inventory Full");
             }
         }
     }
 
-    void ReEnable()
+    private void ReEnable()
     {
         objectToDelete.SetActive(true);
     }

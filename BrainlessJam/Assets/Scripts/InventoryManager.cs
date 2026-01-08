@@ -7,15 +7,15 @@ public class InventoryManager : MonoBehaviour
 
     private SlotManager[] slots;
 
-    void Awake()
+    private void Awake()
     {
-        slots = GetComponentsInChildren<SlotManager>(true);
-
         if (dataHolder == null)
         {
             Debug.LogError("InventoryManager: DataHolder not assigned.");
             return;
         }
+
+        slots = GetComponentsInChildren<SlotManager>(true);
 
         dataHolder.InitializeIfNeeded(slots.Length);
 
@@ -25,16 +25,15 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
-        if (slots == null || slots.Length == 0)
-            return;
+        if (slots == null || slots.Length == 0) return;
 
         ScrollManagement();
         MoveSelector();
     }
 
-    void ScrollManagement()
+    private void ScrollManagement()
     {
         float scroll = Input.GetAxis("Mouse ScrollWheel");
 
@@ -49,15 +48,10 @@ public class InventoryManager : MonoBehaviour
             dataHolder.selectorPos = 0;
     }
 
-    void MoveSelector()
+    public void MoveSelector()
     {
+        if (selector == null || slots[dataHolder.selectorPos] == null) return;
         selector.position = slots[dataHolder.selectorPos].transform.position;
-    }
-
-    // 🔹 NEW: Safe accessor for other scripts (PickupObject, etc.)
-    public int GetSelectedIndex()
-    {
-        return dataHolder.selectorPos;
     }
 
     public SlotManager GetSelectedSlot()
@@ -70,27 +64,22 @@ public class InventoryManager : MonoBehaviour
         return dataHolder.ingredients[dataHolder.selectorPos];
     }
 
+    // Adds ingredient to first empty slot
     public bool TryAddToFirstEmptySlot(Ingredient ingredient)
     {
-        if (ingredient == null)
-            return false;
+        if (ingredient == null) return false;
 
         for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i].GetIngredient() == null)
             {
                 slots[i].SetIngredient(ingredient);
-
-                // Optional: move selector to the filled slot
-                dataHolder.selectorPos = i;
+                dataHolder.selectorPos = i; // optional: move selector
                 MoveSelector();
-
                 return true;
             }
         }
 
-        // Inventory full
-        return false;
+        return false; // inventory full
     }
-
 }
