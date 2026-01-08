@@ -9,22 +9,29 @@ public class MainMenu : MonoBehaviour
 
     [Header("Buttons")]
     public GameObject playButton;
-    public GameObject exitButton;
     public GameObject settingsButton;
-    public GameObject closeSettingsButton;
+    public GameObject exitButton;
 
     [Header("Animators")]
     public Animator playAnim;
-    public Animator exitAnim;
     public Animator settingsAnim;
+    public Animator exitAnim;
 
-    public GameObject settingsPanel;
+
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip hoverClip;   // stone slide / rumble
+    public AudioClip clickClip;   // heavier stone impact
 
     RaycastHit hit;
+
+    GameObject lastHoverButton;
 
     void Start()
     {
         cam = Camera.main;
+        //settingsPanel.SetActive(false);
+        lastHoverButton = null;
     }
 
     void Update()
@@ -32,37 +39,70 @@ public class MainMenu : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
         bool playHover = false;
-        bool exitHover = false;
         bool settingsHover = false;
+        bool exitHover = false;
+
+        GameObject currentHover = null;
 
         if (Physics.Raycast(ray, out hit, 100f))
         {
-            playHover = hit.collider.gameObject == playButton;
-            exitHover = hit.collider.gameObject == exitButton;
-            settingsHover = hit.collider.gameObject == settingsButton;
+            GameObject hitObj = hit.collider.gameObject;
+
+            if (hitObj == playButton)
+            {
+                playHover = true;
+                currentHover = playButton;
+            }
+            else if (hitObj == settingsButton)
+            {
+                settingsHover = true;
+                currentHover = settingsButton;
+            }
+            else if (hitObj == exitButton)
+            {
+                exitHover = true;
+                currentHover = exitButton;
+            }
+
+            // Hover sound (only once per entry)
+            if (currentHover != null && currentHover != lastHoverButton)
+            {
+                audioSource.PlayOneShot(hoverClip);
+                lastHoverButton = currentHover;
+            }
 
             if (Input.GetMouseButtonDown(0))
             {
-                if (hit.collider.gameObject == playButton)
+                audioSource.PlayOneShot(clickClip);
+
+                if (hitObj == playButton)
                     PlayGame();
-                else if (hit.collider.gameObject == exitButton)
-                    ExitGame();
-                else if (hit.collider.gameObject == settingsButton)
+                else if (hitObj == settingsButton)
                     OpenSettings();
-                else if (hit.collider.gameObject == closeSettingsButton)
-                    CloseSettings();
+                else if (hitObj == exitButton)
+                    ExitGame();
             }
+        }
+        else
+        {
+            lastHoverButton = null;
         }
 
         playAnim.SetBool("Hover", playHover);
-        exitAnim.SetBool("Hover", exitHover);
         settingsAnim.SetBool("Hover", settingsHover);
+        exitAnim.SetBool("Hover", exitHover);
     }
-
+    
     void PlayGame()
     {
         playAnim.SetTrigger("Click");
-        // SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1);
+    }
+
+    void OpenSettings()
+    {
+        settingsAnim.SetTrigger("Click");
+      //  settingsPanel.SetActive(true);
     }
 
     void ExitGame()
@@ -71,19 +111,17 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    void OpenSettings()
-    {
-        settingsPanel.SetActive(true);
-        settingsAnim.SetTrigger("Click");
-    }
-
-    void CloseSettings()
-    {
-        settingsPanel.SetActive(false);
-    }
-
     public void SetVolume(float volume)
     {
         mixer.SetFloat("Vol", volume);
+    }
+    public void Fullscreen(bool isFull)
+    {
+        Screen.fullScreen = isFull;
+        Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+    }
+    public void setQuality(int index)
+    {
+        QualitySettings.SetQualityLevel(index);
     }
 }
