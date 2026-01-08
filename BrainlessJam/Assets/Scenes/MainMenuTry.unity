@@ -3453,13 +3453,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   mixer: {fileID: 0}
+  StartScene: SampleScene
   playButton: {fileID: 8796033031910291392}
   settingsButton: {fileID: 134871638}
   exitButton: {fileID: 987808840}
   playAnim: {fileID: 8796033031910291394}
   settingsAnim: {fileID: 134871644}
   exitAnim: {fileID: 987808841}
-  settingsPanel: {fileID: 0}
   audioSource: {fileID: 2067245342}
   hoverClip: {fileID: 8300000, guid: cab60102cd1575b458ab6f886d572c89, type: 3}
   clickClip: {fileID: 8300000, guid: 3d31f3a8b6dfb8549b9fa262c0c7c42f, type: 3}

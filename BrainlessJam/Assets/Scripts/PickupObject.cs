@@ -6,6 +6,10 @@ public class PickupObject : MonoBehaviour
     [Header("Scene Interaction")]
     [SerializeField] private string minigameScene; // The scene to load
     [SerializeField] PopupUI popup;
+    
+    [Header("Inventory")]
+    [SerializeField] InventoryManager inventoryManager;
+    [SerializeField] Ingredient relevantIngredient;
 
     [Header("Input")]
     [SerializeField] private string pickupHotkeyName = "Pickup";
@@ -19,17 +23,33 @@ public class PickupObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-            playerInRange = true;
-        popup.ShowPopup("Press E to Gather");
-        
+        if (other.CompareTag("Player")) 
+                if (relevantIngredient.relevantTool == inventoryManager.GetSelectedIngredient()?.ingredientName)
+                {
+                    playerInRange = true;
+                    popup.ShowPopup("Press E to Gather");
+                }
+                else
+                {
+                    if (relevantIngredient.relevantTool == "Hands")
+                    {
+                        playerInRange = true;
+                        popup.ShowPopup("Press E to Gather");
+                    }
+                    else
+                    {
+                         Debug.Log(relevantIngredient.relevantTool);
+                        popup.ShowPopup("You need a " + relevantIngredient.relevantTool + " to gather this ingredient!");
+                    }    
+                }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
             playerInRange = false;
-        popup.HidePopup();
+            popup.HidePopup();
+        
     }
 
     private void Update()

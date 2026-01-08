@@ -18,3 +18,5 @@ MonoBehaviour:
   relevantZone: {fileID: 0}
   modelPrefab: {fileID: 919132149155446097, guid: e9202abf91433354b83a7b5d334711cd, type: 3}
   isTool: 0
+  cookable: 0
+  cookResult: {fileID: 0}

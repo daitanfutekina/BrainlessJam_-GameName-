@@ -68,6 +68,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PickupObject
   minigameScene: 
   popup: {fileID: 0}
+  inventoryManager: {fileID: 0}
+  relevantIngredient: {fileID: 0}
   pickupHotkeyName: Pickup
   objectToDelete: {fileID: 6543654981382758881}
   respawnObject: 1
@@ -94,7 +96,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a1fbb8c6fb148664cbb9e44a42001809, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -44.984013
+      value: -52.15401
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a1fbb8c6fb148664cbb9e44a42001809, type: 3}
       propertyPath: m_LocalPosition.y
@@ -102,7 +104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a1fbb8c6fb148664cbb9e44a42001809, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.667189
+      value: 24.770689
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a1fbb8c6fb148664cbb9e44a42001809, type: 3}
       propertyPath: m_LocalRotation.w

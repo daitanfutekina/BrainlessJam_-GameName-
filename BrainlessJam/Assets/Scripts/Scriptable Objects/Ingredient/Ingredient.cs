@@ -9,4 +9,14 @@ public class Ingredient : ScriptableObject
     public Collider relevantZone;
     public GameObject modelPrefab;
     public bool isTool;
+    public bool cookable;
+    public Ingredient cookResult;
+        
+    void Start()
+    {
+        if (relevantTool == "")
+        {
+            relevantTool = null;
+        }
+    }
 }
