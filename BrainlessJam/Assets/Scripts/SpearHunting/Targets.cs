@@ -8,41 +8,76 @@ public class Targets : MonoBehaviour
     public SpearHuntingManager minigameManager;
     public int winSceneBuildIndex;
 
+    [Header("Inventory")]
+    public DataHolder dataHolder;          // Reference to the ScriptableObject holding inventory
+    public Ingredient ingredientToAdd;     // Ingredient to add on hit
+    public int inventorySlotCount = 10;    // Default inventory size
+
     [Header("Values")]
     public float startPoint;
     public float endPoint;
     public float speed = 1f;
-    
-    
-    void Update()
+
+    private void Start()
     {
-        OscillateLerp(gameObject.transform, 'x', startPoint, endPoint, speed);
-    }    
-    
-    void OnTriggerEnter(Collider other)
+        // Ensure the DataHolder's ingredients array is initialized
+        if (dataHolder != null)
+            dataHolder.InitializeIfNeeded(inventorySlotCount);
+    }
+
+    private void Update()
     {
-        if (other.tag == "MinigameSpear")
+        OscillateLerp(transform, 'x', startPoint, endPoint, speed);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("MinigameSpear"))
         {
             targetManager.hitCount++;
+
+            // Add ingredient to inventory
+            if (dataHolder != null && ingredientToAdd != null)
+            {
+                bool added = TryAddToNextEmptySlot(dataHolder, ingredientToAdd);
+                if (!added)
+                    Debug.Log("Inventory Full! Could not add ingredient: " + ingredientToAdd.ingredientName);
+            }
+
+            // Load the win scene
             SceneManager.LoadScene(winSceneBuildIndex);
         }
     }
 
-    public static void OscillateLerp(Transform t, char axis, float min, float max, float speed = 1f)
-{
-    // PingPong returns a value between 0 and 1 * range
-    float tValue = Mathf.PingPong(Time.time * speed, 1f); 
-    float value = Mathf.Lerp(min, max, tValue);
-
-    Vector3 pos = t.position;
-    switch (axis)
+    /// <summary>
+    /// Adds an ingredient to the first empty slot in the DataHolder
+    /// </summary>
+    private bool TryAddToNextEmptySlot(DataHolder holder, Ingredient ingredient)
     {
-        case 'x': pos.x = value; break;
-        case 'y': pos.y = value; break;
-        case 'z': pos.z = value; break;
+        for (int i = 0; i < holder.ingredients.Length; i++)
+        {
+            if (holder.ingredients[i] == null)
+            {
+                holder.ingredients[i] = ingredient;
+                Debug.Log($"Added ingredient '{ingredient.ingredientName}' to slot {i}");
+                return true;
+            }
+        }
+        return false; // No empty slot found
     }
-    t.position = pos;
-}
 
+    public static void OscillateLerp(Transform t, char axis, float min, float max, float speed = 1f)
+    {
+        float tValue = Mathf.PingPong(Time.time * speed, 1f);
+        float value = Mathf.Lerp(min, max, tValue);
 
+        Vector3 pos = t.position;
+        switch (axis)
+        {
+            case 'x': pos.x = value; break;
+            case 'y': pos.y = value; break;
+            case 'z': pos.z = value; break;
+        }
+        t.position = pos;
+    }
 }

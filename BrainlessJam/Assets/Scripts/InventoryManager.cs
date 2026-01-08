@@ -4,6 +4,7 @@ public class InventoryManager : MonoBehaviour
 {
     [SerializeField] private RectTransform selector;
     [SerializeField] private DataHolder dataHolder;
+    [SerializeField] private Vector3 selectorOffset;
 
     private SlotManager[] slots;
 
@@ -51,7 +52,7 @@ public class InventoryManager : MonoBehaviour
     public void MoveSelector()
     {
         if (selector == null || slots[dataHolder.selectorPos] == null) return;
-        selector.position = slots[dataHolder.selectorPos].transform.position;
+        selector.position = slots[dataHolder.selectorPos].transform.position + selectorOffset;
     }
 
     public SlotManager GetSelectedSlot()

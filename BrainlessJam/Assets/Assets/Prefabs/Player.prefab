@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 5288113249308935485}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -421,6 +421,8 @@ MonoBehaviour:
   rotateSpeed: 100
   runBoost: 15
   walkParticles: {fileID: 2045439457393364530}
+  inventoryManager: {fileID: 0}
+  ingredient: {fileID: 11400000, guid: 5c6a475716d636d4e856fdcdff045ead, type: 2}
 --- !u!54 &8912539892760085410
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -447,7 +449,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!136 &5288113249308935485
 CapsuleCollider:
   m_ObjectHideFlags: 0

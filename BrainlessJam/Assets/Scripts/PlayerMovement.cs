@@ -13,9 +13,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Particles")]
     [SerializeField] ParticleSystem walkParticles;
 
-    [Header("Misc/Debug")]
-    [SerializeField] InventoryManager inventoryManager;
-    [SerializeField] Ingredient ingredient;
+    //[Header("Misc/Debug")]
+    //[SerializeField] InventoryManager inventoryManager;
+    //[SerializeField] Ingredient ingredient;
 
     Animator animator;
     Rigidbody rb;
@@ -32,14 +32,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.eKey.IsPressed())
-        {
-            inventoryManager.GetSelectedSlot()?.SetIngredient(ingredient);
-        }
-        if (Keyboard.current.pKey.IsPressed())
-        {
-            SceneManager.LoadScene("SpearHunting");
-        }
+        //if (Keyboard.current.eKey.IsPressed())
+        //{
+            //inventoryManager.GetSelectedSlot()?.SetIngredient(ingredient);
+        //}
+        //if (Keyboard.current.pKey.IsPressed())
+        //{
+            //SceneManager.LoadScene("SpearHunting");
+        //}
     }
 
     void FixedUpdate()

@@ -339,6 +339,9 @@ MonoBehaviour:
   targetManager: {fileID: 924133929}
   minigameManager: {fileID: 834458259}
   winSceneBuildIndex: 1
+  dataHolder: {fileID: 11400000, guid: a9a3a32c1d121b648b0ef9268e342ed4, type: 2}
+  ingredientToAdd: {fileID: 11400000, guid: 67e0035ad23dbdf40b0ee9331f4c9e3b, type: 2}
+  inventorySlotCount: 5
   startPoint: 350
   endPoint: -350
   speed: 0.5
@@ -471,6 +474,9 @@ MonoBehaviour:
   targetManager: {fileID: 924133929}
   minigameManager: {fileID: 834458259}
   winSceneBuildIndex: 1
+  dataHolder: {fileID: 11400000, guid: a9a3a32c1d121b648b0ef9268e342ed4, type: 2}
+  ingredientToAdd: {fileID: 11400000, guid: 67e0035ad23dbdf40b0ee9331f4c9e3b, type: 2}
+  inventorySlotCount: 5
   startPoint: 350
   endPoint: -350
   speed: 2
@@ -1036,6 +1042,9 @@ MonoBehaviour:
   targetManager: {fileID: 924133929}
   minigameManager: {fileID: 834458259}
   winSceneBuildIndex: 1
+  dataHolder: {fileID: 11400000, guid: a9a3a32c1d121b648b0ef9268e342ed4, type: 2}
+  ingredientToAdd: {fileID: 11400000, guid: 67e0035ad23dbdf40b0ee9331f4c9e3b, type: 2}
+  inventorySlotCount: 5
   startPoint: 350
   endPoint: -350
   speed: 1
