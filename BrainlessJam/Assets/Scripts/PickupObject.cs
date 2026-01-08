@@ -1,58 +1,59 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
 public class PickupObject : MonoBehaviour
 {
     [Header("Inventory")]
-    [SerializeField] InventoryManager inventoryManager;
-    [SerializeField] Ingredient ingredientToSet;
-    
-    [Header("Input, make sure to define in Input Map")]
-    [SerializeField] string pickupHotkeyName = "Pickup";
+    [SerializeField] private InventoryManager inventoryManager;
+    [SerializeField] private Ingredient ingredientToSet;
+
+    [Header("Input (Input Actions Name)")]
+    [SerializeField] private string pickupHotkeyName = "Pickup";
 
     [Header("Scene")]
-    [SerializeField] GameObject objectToDelete;
-    [SerializeField] bool respawnObject = false;
-    [SerializeField] float respawnTime = 10f;
- 
+    [SerializeField] private GameObject objectToDelete;
+    [SerializeField] private bool respawnObject = false;
+    [SerializeField] private float respawnTime = 10f;
+
+    private bool playerInRange;
+
     void OnCollisionEnter(Collision other)
     {
+        if (other.collider.CompareTag("Player"))
+            playerInRange = true;
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        if (other.collider.CompareTag("Player"))
+            playerInRange = false;
+    }
+
+    void Update()
+    {
+        if (!playerInRange || inventoryManager == null)
+            return;
+
         if (Input.GetButtonDown(pickupHotkeyName))
         {
-            AddToNextFreeSlot(ingredientToSet);
-            if (respawnObject)
+            bool added = inventoryManager.TryAddToFirstEmptySlot(ingredientToSet);
+
+            if (added)
             {
-                Invoke("ReEnable", respawnTime);
+                if (respawnObject)
+                    Invoke(nameof(ReEnable), respawnTime);
+                else
+                    Destroy(gameObject);
             }
             else
             {
-                Destroy(gameObject);
+                Debug.Log("Inventory is full!");
             }
         }
     }
+
     void ReEnable()
     {
-        objectToDelete.SetActive(false);
-    }
-    void Update()
-    {
-         Debug.Log(inventoryManager.GetSelectedIngredient());
-    }
-    public void AddToNextFreeSlot(Ingredient objectToAdd)
-    {
-        if (inventoryManager.GetSelectedIngredient() != null)
-        {
-            inventoryManager.GetSelectedSlot()?.SetIngredient(ingredientToSet);
-            objectToDelete.SetActive(false);
-            return;
-        }
-        else
-        {
-            inventoryManager.selectorPos++;
-            inventoryManager.MoveSelector();
-            AddToNextFreeSlot(objectToAdd);
-        }
-        
+        objectToDelete.SetActive(true);
     }
 }

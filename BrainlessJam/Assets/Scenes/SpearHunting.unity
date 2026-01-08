@@ -337,6 +337,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Targets
   targetManager: {fileID: 924133929}
+  minigameManager: {fileID: 834458259}
+  winSceneBuildIndex: 1
   minSpeed: 0
   maxSpeed: 0
 --- !u!1 &582193898
@@ -466,6 +468,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Targets
   targetManager: {fileID: 924133929}
+  minigameManager: {fileID: 834458259}
+  winSceneBuildIndex: 1
   minSpeed: 0
   maxSpeed: 0
 --- !u!1 &834458258
@@ -1027,6 +1031,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Targets
   targetManager: {fileID: 924133929}
+  minigameManager: {fileID: 834458259}
+  winSceneBuildIndex: 1
   minSpeed: 0
   maxSpeed: 0
 --- !u!33 &1135252126441893148

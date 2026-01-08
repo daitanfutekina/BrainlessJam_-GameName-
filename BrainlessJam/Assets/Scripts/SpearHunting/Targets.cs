@@ -6,6 +6,7 @@ public class Targets : MonoBehaviour
     [Header("Configuration")]
     public TargetManager targetManager;
     public SpearHuntingManager minigameManager;
+    public int winSceneBuildIndex;
 
     [Header("Values")]
     public float minSpeed;
@@ -16,7 +17,7 @@ public class Targets : MonoBehaviour
         if (other.tag == "MinigameSpear")
         {
             targetManager.hitCount++;
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene(winSceneBuildIndex);
         }
     }
 }

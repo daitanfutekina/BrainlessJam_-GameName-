@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("Particles")]
     [SerializeField] ParticleSystem walkParticles;
 
+    [Header("Misc/Debug")]
+    [SerializeField] InventoryManager inventoryManager;
+    [SerializeField] Ingredient ingredient;
+
     Animator animator;
     Rigidbody rb;
 
@@ -23,6 +28,18 @@ public class PlayerMovement : MonoBehaviour
         rb.constraints = RigidbodyConstraints.FreezeRotation;
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+    }
+
+    void Update()
+    {
+        if (Keyboard.current.eKey.IsPressed())
+        {
+            inventoryManager.GetSelectedSlot()?.SetIngredient(ingredient);
+        }
+        if (Keyboard.current.pKey.IsPressed())
+        {
+            SceneManager.LoadScene("SpearHunting");
+        }
     }
 
     void FixedUpdate()

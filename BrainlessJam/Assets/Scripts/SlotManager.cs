@@ -3,35 +3,45 @@ using UnityEngine.UI;
 
 public class SlotManager : MonoBehaviour
 {
-    [SerializeField] private Ingredient ingredient;
+    [Header("Editor Preset (Optional)")]
+    [SerializeField] private Ingredient presetIngredient;
+
     [SerializeField] private Image image;
 
-    void Start()
+    private DataHolder dataHolder;
+    private int slotIndex;
+
+    public void Initialize(DataHolder holder, int index)
     {
+        dataHolder = holder;
+        slotIndex = index;
+
+        // Apply preset ONLY if DataHolder slot is empty
+        if (dataHolder.ingredients[slotIndex] == null && presetIngredient != null)
+        {
+            dataHolder.ingredients[slotIndex] = presetIngredient;
+        }
+
         UpdateSlot();
     }
 
     public Ingredient GetIngredient()
     {
-        if (ingredient != null)
-        {
-            return ingredient;
-        }
-        else
-        {
-            return null;
-        }
+        return dataHolder.ingredients[slotIndex];
     }
 
     public void SetIngredient(Ingredient newIngredient)
     {
-        ingredient = newIngredient;
+        dataHolder.ingredients[slotIndex] = newIngredient;
         UpdateSlot();
     }
 
     void UpdateSlot()
     {
-        if (image == null) return;
+        if (image == null || dataHolder == null)
+            return;
+
+        Ingredient ingredient = dataHolder.ingredients[slotIndex];
 
         if (ingredient != null)
         {
@@ -48,7 +58,11 @@ public class SlotManager : MonoBehaviour
 #if UNITY_EDITOR
     void OnValidate()
     {
-        UpdateSlot();
+        if (image == null)
+            return;
+
+        image.sprite = presetIngredient != null ? presetIngredient.icon : null;
+        image.enabled = presetIngredient != null;
     }
 #endif
 }
