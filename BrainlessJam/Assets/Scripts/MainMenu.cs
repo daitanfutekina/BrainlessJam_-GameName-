@@ -6,6 +6,7 @@ public class MainMenu : MonoBehaviour
 {
     public AudioMixer mixer;
     Camera cam;
+    public string StartScene;
 
     [Header("Buttons")]
     public GameObject playButton;
@@ -96,7 +97,7 @@ public class MainMenu : MonoBehaviour
     void PlayGame()
     {
         playAnim.SetTrigger("Click");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(StartScene);
     }
 
     void OpenSettings()
