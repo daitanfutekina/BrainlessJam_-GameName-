@@ -9,7 +9,7 @@ public class Ingredient : ScriptableObject
     public Collider relevantZone;
     public GameObject modelPrefab;
     public bool isTool;
-    public bool cookable;
+    public bool isCookable;
     public Ingredient cookResult;
         
     void Start()
