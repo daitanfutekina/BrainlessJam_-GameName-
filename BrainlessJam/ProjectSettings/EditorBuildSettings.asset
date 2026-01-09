@@ -15,8 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/SpearHunting.unity
     guid: 45fbe22d54ea8c54286c0fe892aa7635
   - enabled: 1
-    path: Assets/Scenes/Whack-A-Mole.unity
-    guid: 4208b65e92e1d5c48b395ef1a7410b0f
+    path: Assets/Scenes/PluckingGameBerry.unity
+    guid: 3026c7f99de05e74c89babb5485f0802
+  - enabled: 1
+    path: Assets/Scenes/PluckingGameMush.unity
+    guid: 448ee738ba5f76b45aa85377f8e197d9
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

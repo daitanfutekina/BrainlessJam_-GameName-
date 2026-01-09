@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d3253e5297732143a166fc47cd9309d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupObject
-  minigameScene: 
+  minigameScene: PluckingGameBerry
   popup: {fileID: 0}
   inventoryManager: {fileID: 0}
-  relevantIngredient: {fileID: 0}
+  relevantIngredient: {fileID: 11400000, guid: 3d7b7a4e996d4f247a012ecccbce940b, type: 2}
   pickupHotkeyName: Pickup
   objectToDelete: {fileID: 4643021456854716284}
   respawnObject: 1

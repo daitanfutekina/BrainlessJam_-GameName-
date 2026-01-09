@@ -92,6 +92,7 @@ public class MainMenu : MonoBehaviour
         playAnim.SetBool("Hover", playHover);
         settingsAnim.SetBool("Hover", settingsHover);
         exitAnim.SetBool("Hover", exitHover);
+
     }
     
     void PlayGame()
@@ -103,7 +104,7 @@ public class MainMenu : MonoBehaviour
     void OpenSettings()
     {
         settingsAnim.SetTrigger("Click");
-      //  settingsPanel.SetActive(true);
+        // settingsPanel.SetActive(true);
     }
 
     void ExitGame()
