@@ -1,10 +1,14 @@
 using UnityEngine;
 
-public class ClickDetector : MonoBehaviour
+public class RootClickDetector : MonoBehaviour
 {
     // LayerMask to filter which objects can be clicked (optional)
     public LayerMask clickableLayers = Physics.DefaultRaycastLayers;
-    public OptionManager minigameManager;
+    public RootManager minigameManager;
+    // make a ref to a tmpUI text to show click count
+    public TMPro.TMP_Text clickCountText;
+
+    private int clickCount = 0;
     void Update()
     {
         // Detect left mouse button click
@@ -23,7 +27,12 @@ public class ClickDetector : MonoBehaviour
         // Perform the raycast
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, clickableLayers))
         {
-            minigameManager.CheckPoison(hit.collider.gameObject.name);
+            clickCount++;
+            if (clickCountText != null)
+            {
+                clickCountText.text = clickCount.ToString();
+            }
+            minigameManager.CheckClicks(clickCount);
 
             // Example: Call a method on the clicked object
             IClickable clickable = hit.collider.GetComponent<IClickable>();
@@ -33,10 +42,4 @@ public class ClickDetector : MonoBehaviour
             }
         }
     }
-}
-
-// Optional interface for clicked objects
-public interface IClickable
-{
-    void OnClick();
 }

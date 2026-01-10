@@ -23,4 +23,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  selectorPos: 9
+  selectorPos: 2
+  currentGoal: {fileID: 11400000, guid: 67954cd559b56d34885294eae5ffc629, type: 2}

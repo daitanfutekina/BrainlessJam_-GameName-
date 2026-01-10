@@ -361,7 +361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 920867412}
-  - component: {fileID: 920867411}
+  - component: {fileID: 920867413}
   m_Layer: 0
   m_Name: ClickManager
   m_TagString: Untagged
@@ -369,22 +369,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &920867411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920867410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db4c64415ac44a2408cdea2fd03fe440, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ClickDetector
-  clickableLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  optionManager: {fileID: 2127132671}
 --- !u!4 &920867412
 Transform:
   m_ObjectHideFlags: 0
@@ -400,6 +384,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &920867413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920867410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf24234295ad81b4cb9e876c60ac8654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClickDetector
+  clickableLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  minigameManager: {fileID: 2127132671}
 --- !u!1 &951254408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,7 +1479,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2127132669}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b851dec3e4fb3f46b6cc5cdbe303c10, type: 3}
+  m_Script: {fileID: 11500000, guid: 71479659206fbfa45aa7eebc7a1b146a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OptionManager
   options:

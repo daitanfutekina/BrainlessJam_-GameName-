@@ -5,6 +5,7 @@ public class DataHolder : ScriptableObject
 {
     public Ingredient[] ingredients;
     public int selectorPos = 0;
+    public Ingredient currentGoal;
 
     // Initialize array only if null or wrong length
     public void InitializeIfNeeded(int slotCount)
