@@ -24,6 +24,9 @@ public class MainMenu : MonoBehaviour
     public AudioClip hoverClip;   // stone slide / rumble
     public AudioClip clickClip;   // heavier stone impact
 
+    [Header("Misc")]
+    public Setts settingsScript;
+
     RaycastHit hit;
 
     GameObject lastHoverButton;
@@ -36,6 +39,46 @@ public class MainMenu : MonoBehaviour
     }
 
     void Update()
+    {
+        if (settingsScript.isActive == false)
+        {
+            ManageMenu();
+        }
+    }
+    
+    void PlayGame()
+    {
+        playAnim.SetTrigger("Click");
+        SceneManager.LoadScene(StartScene);
+    }
+
+    void OpenSettings()
+    {
+        settingsAnim.SetTrigger("Click");
+        // settingsPanel.SetActive(true);
+    }
+
+    void ExitGame()
+    {
+        exitAnim.SetTrigger("Click");
+        Application.Quit();
+    }
+
+    public void SetVolume(float volume)
+    {
+        mixer.SetFloat("Vol", volume);
+    }
+    public void Fullscreen(bool isFull)
+    {
+        Screen.fullScreen = isFull;
+        Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+    }
+    public void setQuality(int index)
+    {
+        QualitySettings.SetQualityLevel(index);
+    }
+
+    void ManageMenu()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
@@ -92,38 +135,5 @@ public class MainMenu : MonoBehaviour
         playAnim.SetBool("Hover", playHover);
         settingsAnim.SetBool("Hover", settingsHover);
         exitAnim.SetBool("Hover", exitHover);
-
-    }
-    
-    void PlayGame()
-    {
-        playAnim.SetTrigger("Click");
-        SceneManager.LoadScene(StartScene);
-    }
-
-    void OpenSettings()
-    {
-        settingsAnim.SetTrigger("Click");
-        // settingsPanel.SetActive(true);
-    }
-
-    void ExitGame()
-    {
-        exitAnim.SetTrigger("Click");
-        Application.Quit();
-    }
-
-    public void SetVolume(float volume)
-    {
-        mixer.SetFloat("Vol", volume);
-    }
-    public void Fullscreen(bool isFull)
-    {
-        Screen.fullScreen = isFull;
-        Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
-    }
-    public void setQuality(int index)
-    {
-        QualitySettings.SetQualityLevel(index);
     }
 }

@@ -456,6 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   setts: {fileID: 527198567}
+  isActive: 0
 --- !u!1 &227541352
 GameObject:
   m_ObjectHideFlags: 0
@@ -3801,6 +3802,7 @@ MonoBehaviour:
   audioSource: {fileID: 2067245342}
   hoverClip: {fileID: 8300000, guid: cab60102cd1575b458ab6f886d572c89, type: 3}
   clickClip: {fileID: 8300000, guid: 3d31f3a8b6dfb8549b9fa262c0c7c42f, type: 3}
+  settingsScript: {fileID: 134871645}
 --- !u!4 &2067245341
 Transform:
   m_ObjectHideFlags: 0
