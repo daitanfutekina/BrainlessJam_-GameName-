@@ -38,7 +38,7 @@ public class PickupObject : MonoBehaviour
                     }
                     else
                     {
-                         Debug.Log(relevantIngredient.relevantTool);
+                        Debug.Log(relevantIngredient.relevantTool);
                         popup.ShowPopup("You need a " + relevantIngredient.relevantTool + " to gather this ingredient!");
                     }    
                 }

@@ -69,11 +69,20 @@ public class PlayerMovement : MonoBehaviour
 
         // ----- PLAYER-RELATIVE INPUT -----
         Vector3 inputDir = new Vector3(horizontal, 0f, vertical);
-        if (inputDir.sqrMagnitude > 1f)
+        bool hasInput = inputDir.sqrMagnitude > 0.1f;
+        
+        if (hasInput)
             inputDir.Normalize();
 
         // Convert inputDir from local (player) space to world space
         Vector3 relativeDir = transform.TransformDirection(inputDir);
+
+        // ----- ROTATION BASED ON MOVEMENT -----
+        if (hasInput && vertical >= 0f)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(relativeDir);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotateSpeed * Time.fixedDeltaTime);
+        }
 
         // Apply velocity
         Vector3 velocity = relativeDir * moveSpeed;
@@ -81,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = velocity;
 
         // ----- PARTICLES -----
-        if (Mathf.Abs(horizontal) > 0.3f || Mathf.Abs(vertical) > 0.3f)
+        if (hasInput)
         {
             if (!walkParticles.isPlaying) walkParticles.Play();
         }
@@ -89,8 +98,5 @@ public class PlayerMovement : MonoBehaviour
         {
             walkParticles.Stop();
         }
-
-        // ----- ROTATION (unchanged) -----
-        transform.Rotate(0f, horizontal * rotateSpeed * Time.fixedDeltaTime, 0f);
     }
 }
